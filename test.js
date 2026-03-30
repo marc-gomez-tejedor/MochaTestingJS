@@ -1,15 +1,19 @@
 describe("pow", function() {
 
-  it("raises to n-th power", function() {
-    assert.equal(pow(2, 3), 8);
-  });
+  describe("raises x to power 3", function() {
+    function makeTestPower3(x) {
+      let expected = x * x * x;
+      it(`${x} in the power 3 is ${expected}`, function() {
+        assert.equal(pow(x, 3), expected);
+      });
+    }
 
-  it("2 raised to power 3 is 8", function() {
-    assert.equal(pow(2, 3), 8);
-  });
+    for (let x = 1; x <= 5; x++) {
+      makeTestPower3(x);
+    }
 
-  it("3 raised to power 4 is 81", function() {
-    assert.equal(pow(3, 4), 81);
   });
+  
+  // more tests to follow here
 
 });
